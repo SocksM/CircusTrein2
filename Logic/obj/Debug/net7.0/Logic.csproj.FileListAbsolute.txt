@@ -1,0 +1,12 @@
+C:\Users\nieks\source\repos\CircusTrein2\Logic\bin\Debug\net7.0\Logic.deps.json
+C:\Users\nieks\source\repos\CircusTrein2\Logic\bin\Debug\net7.0\Logic.dll
+C:\Users\nieks\source\repos\CircusTrein2\Logic\bin\Debug\net7.0\Logic.pdb
+C:\Users\nieks\source\repos\CircusTrein2\Logic\obj\Debug\net7.0\Logic.csproj.AssemblyReference.cache
+C:\Users\nieks\source\repos\CircusTrein2\Logic\obj\Debug\net7.0\Logic.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nieks\source\repos\CircusTrein2\Logic\obj\Debug\net7.0\Logic.AssemblyInfoInputs.cache
+C:\Users\nieks\source\repos\CircusTrein2\Logic\obj\Debug\net7.0\Logic.AssemblyInfo.cs
+C:\Users\nieks\source\repos\CircusTrein2\Logic\obj\Debug\net7.0\Logic.csproj.CoreCompileInputs.cache
+C:\Users\nieks\source\repos\CircusTrein2\Logic\obj\Debug\net7.0\Logic.dll
+C:\Users\nieks\source\repos\CircusTrein2\Logic\obj\Debug\net7.0\refint\Logic.dll
+C:\Users\nieks\source\repos\CircusTrein2\Logic\obj\Debug\net7.0\Logic.pdb
+C:\Users\nieks\source\repos\CircusTrein2\Logic\obj\Debug\net7.0\ref\Logic.dll
