@@ -1,9 +1,10 @@
 ﻿using System.Collections.Generic;
+using System.Diagnostics;
 using System.Security.Cryptography.X509Certificates;
 
 namespace Logic
 {
-    public class TrainManager //manager als in persoon die treinen managed
+    public class TrainManager
     {
         private List<List<Cart>> Trains = new List<List<Cart>>();
 
@@ -28,21 +29,22 @@ namespace Logic
             {
                 return null;
             }
-            Console.WriteLine($"Train index used: {index}");
+            Debug.WriteLine($"Train index used: {index}");
             return Trains[index];
         }
 
+        [Conditional("DEBUG")]
         public void PrintTrains ()
         {
             foreach (List<Cart> Train in Trains)
             {
-                Console.WriteLine($"\n\nAmount of carts in sort: {Train.Count}");
+                Debug.WriteLine($"\n\nAmount of carts in sort: {Train.Count}");
                 foreach (Cart Cart in Train)
                 {
-                    Console.WriteLine("\nCart Content:");
+                    Debug.WriteLine("\nCart Content:");
                     foreach (Animal Animal in Cart.GetAnimals())
                     {
-                        Console.WriteLine(Animal.ToString());
+                        Debug.WriteLine(Animal.ToString());
                     }
                 }
             }
@@ -51,12 +53,12 @@ namespace Logic
         private List<List<Animal>> SortIntoLists(List<Animal> NonSortedAnimals)
         {
             List<List<Animal>> ListsOfSortedAnimals = new List<List<Animal>> { };
-            ListsOfSortedAnimals.Add(NonSortedAnimals.OrderBy(x => x.GetSize()).ThenBy(x => x.GetDietType()).ToList());
-            //ListsOfSortedAnimals.Add(NonSortedAnimals.OrderByDescending(x => x.GetSize()).ThenBy(x => x.GetDietType()).ToList());
-            //ListsOfSortedAnimals.Add(NonSortedAnimals.OrderByDescending(x => x.GetSize()).ThenByDescending(x => x.GetDietType()).ToList());
-            //ListsOfSortedAnimals.Add(NonSortedAnimals.OrderBy(x => x.GetDietType()).ThenBy(x => x.GetSize()).ToList());
-            //ListsOfSortedAnimals.Add(NonSortedAnimals.OrderByDescending(x => x.GetDietType()).ThenBy(x => x.GetSize()).ToList());
-            ListsOfSortedAnimals.Add(NonSortedAnimals.OrderByDescending(x => x.GetDietType()).ThenByDescending(x => x.GetSize()).ToList());
+            ListsOfSortedAnimals.Add(NonSortedAnimals.OrderBy(animal => animal.Size).ThenBy(animal => animal.DietType).ToList());
+            //ListsOfSortedAnimals.Add(NonSortedAnimals.OrderByDescending(animal => animal.GetSize()).ThenBy(animal => animal.GetDietType()).ToList());
+            //ListsOfSortedAnimals.Add(NonSortedAnimals.OrderByDescending(animal => animal.GetSize()).ThenByDescending(animal => animal.GetDietType()).ToList());
+            //ListsOfSortedAnimals.Add(NonSortedAnimals.OrderBy(animal => animal.GetDietType()).ThenBy(animal => animal.GetSize()).ToList());
+            //ListsOfSortedAnimals.Add(NonSortedAnimals.OrderByDescending(animal => animal.GetDietType()).ThenBy(animal => animal.GetSize()).ToList());
+            ListsOfSortedAnimals.Add(NonSortedAnimals.OrderByDescending(animal => animal.DietType).ThenByDescending(x => x.Size).ToList());
             return ListsOfSortedAnimals;  
         }
 
@@ -69,13 +71,15 @@ namespace Logic
                 while (sort.Count > 0)
                 {
                     train.Add(new Cart());
+                    train[train.Count - 1].TryAddAnimal(sort[0]);
+                    sort.RemoveAt(0);
                     for (int i = 0; i < train.Count; i++)
                     {
                         for (int j = 0; j < sort.Count; j++)
                         {
-                            if (train[i].AddAnimalIfPossible(sort[j]))
+                            if (train[i].TryAddAnimal(sort[j]))
                             {
-                                sort.Remove(sort[j]);
+                                sort.RemoveAt(j);
                                 j -= 1;
                             }
                             if (train[i].RoomLeft() <= 0) break;

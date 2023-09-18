@@ -10,19 +10,19 @@ namespace Logic
     public class Cart
     {
         private List<Animal> Animals = new List<Animal>();
-        public const int MaxCapacity = 10;
+        private const int MaxCapacity = 10;
 
         // ALLEEN PUBLIC VOOR UNIT TESTS 
-        public bool IsThereEnoughRoomFor(Animal Animal) => 0 <= RoomLeft() - (int)Animal.GetSize();
+        public bool IsThereEnoughRoomFor(Animal Animal) => 0 <= RoomLeft() - (int)Animal.Size;
 
         public int RoomLeft()
         {
             int RoomLeft = MaxCapacity;
-            foreach (Animal Animal in Animals) RoomLeft -= (int)Animal.GetSize();
+            foreach (Animal Animal in Animals) RoomLeft -= (int)Animal.Size;
             return RoomLeft;
         }
         public List<Animal> GetAnimals() => Animals;
-        public bool AddAnimalIfPossible (Animal Animal)
+        public bool TryAddAnimal (Animal Animal)
         {
             if (Animals.Count == 0)
             {
@@ -41,7 +41,7 @@ namespace Logic
             return false;
         }
 
-        public override string ToString() // moet dit ook in uml???
+        public override string ToString() 
         {
             string ReturnString = string.Empty;
             foreach (Animal Animal in Animals) ReturnString += $"{Animal}, ";

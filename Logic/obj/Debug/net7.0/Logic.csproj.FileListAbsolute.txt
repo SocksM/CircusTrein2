@@ -10,3 +10,15 @@ C:\Users\nieks\source\repos\CircusTrein2\Logic\obj\Debug\net7.0\Logic.dll
 C:\Users\nieks\source\repos\CircusTrein2\Logic\obj\Debug\net7.0\refint\Logic.dll
 C:\Users\nieks\source\repos\CircusTrein2\Logic\obj\Debug\net7.0\Logic.pdb
 C:\Users\nieks\source\repos\CircusTrein2\Logic\obj\Debug\net7.0\ref\Logic.dll
+C:\1. Fontys\Sem2.2\Individu\Circus Trein\CircusTrein\CircusTrein2\Logic\bin\Debug\net7.0\Logic.deps.json
+C:\1. Fontys\Sem2.2\Individu\Circus Trein\CircusTrein\CircusTrein2\Logic\bin\Debug\net7.0\Logic.dll
+C:\1. Fontys\Sem2.2\Individu\Circus Trein\CircusTrein\CircusTrein2\Logic\bin\Debug\net7.0\Logic.pdb
+C:\1. Fontys\Sem2.2\Individu\Circus Trein\CircusTrein\CircusTrein2\Logic\obj\Debug\net7.0\Logic.csproj.AssemblyReference.cache
+C:\1. Fontys\Sem2.2\Individu\Circus Trein\CircusTrein\CircusTrein2\Logic\obj\Debug\net7.0\Logic.GeneratedMSBuildEditorConfig.editorconfig
+C:\1. Fontys\Sem2.2\Individu\Circus Trein\CircusTrein\CircusTrein2\Logic\obj\Debug\net7.0\Logic.AssemblyInfoInputs.cache
+C:\1. Fontys\Sem2.2\Individu\Circus Trein\CircusTrein\CircusTrein2\Logic\obj\Debug\net7.0\Logic.AssemblyInfo.cs
+C:\1. Fontys\Sem2.2\Individu\Circus Trein\CircusTrein\CircusTrein2\Logic\obj\Debug\net7.0\Logic.csproj.CoreCompileInputs.cache
+C:\1. Fontys\Sem2.2\Individu\Circus Trein\CircusTrein\CircusTrein2\Logic\obj\Debug\net7.0\Logic.dll
+C:\1. Fontys\Sem2.2\Individu\Circus Trein\CircusTrein\CircusTrein2\Logic\obj\Debug\net7.0\refint\Logic.dll
+C:\1. Fontys\Sem2.2\Individu\Circus Trein\CircusTrein\CircusTrein2\Logic\obj\Debug\net7.0\Logic.pdb
+C:\1. Fontys\Sem2.2\Individu\Circus Trein\CircusTrein\CircusTrein2\Logic\obj\Debug\net7.0\ref\Logic.dll
