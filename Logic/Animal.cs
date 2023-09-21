@@ -20,7 +20,10 @@ namespace Logic
 		}
 		private bool DoIEat(Animal animal)
 		{
-			if (DietType == DietType.Herbivore) return false;
+			if (DietType == DietType.Herbivore)
+			{
+				return false;
+			}
 			if ((int)Size < (int)animal.Size)
 			{
 				return false;
@@ -30,8 +33,8 @@ namespace Logic
 		private bool DoIGetEatenBy(Animal animal)
 		{
 			if (animal.DietType == DietType.Herbivore)
-			{ 
-				return false; 
+			{
+				return false;
 			}
 			if ((int)Size > (int)animal.Size)
 			{

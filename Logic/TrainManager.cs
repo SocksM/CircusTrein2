@@ -81,7 +81,10 @@ namespace Logic
                                 sort.RemoveAt(j);
                                 j -= 1;
                             }
-                            if (train[i].RoomLeft() <= 0) break;
+                            if (train[i].RoomLeft() <= 0)
+                            {
+                                break;
+                            }
                         }
                     }
                 }
