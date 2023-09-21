@@ -9,34 +9,38 @@ using System.Threading.Tasks;
 
 namespace Logic
 {
-    public class Animal
-    {
-        private Size Size;
-        private DietType DietType;
-        public Animal(Size size, DietType dietType)
-        {
-            this.Size = size;
-            this.DietType = dietType;
-        }
-        public Size GetSize() => Size;
-        public DietType GetDietType() => DietType;
-        private bool DoIEat(Animal animal)
-        {
-            if (DietType == DietType.Herbivore) return false;
-            if ((int)Size < (int)animal.GetSize()) 
-            {
-                return false;
-            }
-            return true;
-        }
-        private bool DoIGetEatenBy(Animal animal)
-        {
-            if (animal.DietType == DietType.Herbivore) return false;
-            if ((int)Size > (int)animal.GetSize()) return false;
-            return true;
-        }
-        public bool CanIBeWith(Animal animal) => DoIGetEatenBy(animal) ? false : (DoIEat(animal) ? false : true);
+	public class Animal
+	{
+		public Size Size { get; private set; }
+		public DietType DietType { get; private set; }
+		public Animal(Size size, DietType dietType)
+		{
+			Size = size;
+			DietType = dietType;
+		}
+		private bool DoIEat(Animal animal)
+		{
+			if (DietType == DietType.Herbivore) return false;
+			if ((int)Size < (int)animal.Size)
+			{
+				return false;
+			}
+			return true;
+		}
+		private bool DoIGetEatenBy(Animal animal)
+		{
+			if (animal.DietType == DietType.Herbivore)
+			{ 
+				return false; 
+			}
+			if ((int)Size > (int)animal.Size)
+			{
+				return false;
+			}
+			return true;
+		}
+		public bool CanIBeWith(Animal animal) => !DoIGetEatenBy(animal) && (DoIEat(animal) ? false : true);
 
-        public override string ToString() => $"{Size} {DietType}"; // moet dit ook in uml???
-    }
+		public override string ToString() => $"{Size} {DietType}";
+	}
 }
